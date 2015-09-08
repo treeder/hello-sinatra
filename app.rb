@@ -7,14 +7,6 @@ puts "STARTING SINATRA on port #{port}"
 set :port, port
 set :bind, '0.0.0.0'
 
-post('/somepost') do
-  p params
-end
-
-get '/ping' do
-   "pong"
-end
-
 get '/' do
   json({"Hello" => "World!"})
 end
