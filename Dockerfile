@@ -1,4 +1,4 @@
-FROM treeder/ruby
+FROM iron/ruby
 
 WORKDIR /app
 
