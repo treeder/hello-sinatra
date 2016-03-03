@@ -11,8 +11,8 @@ docker run --rm -it -p 8080:8080 treeder/hello-sinatra
 ### Update gems and vendor them:
 
 ```
-docker run --rm -it -v $PWD:/app -w /app iron/ruby-bundle bundle update
-docker run --rm -it -v $PWD:/app -w /app iron/ruby-bundle bundle install --standalone --clean
+docker run --rm -it -v $PWD:/app -w /app iron/ruby:dev bundle update
+docker run --rm -it -v $PWD:/app -w /app iron/ruby:dev bundle install --standalone --clean
 sudo chmod -R a+rw .bundle
 sudo chmod -R a+rw bundle
 ```
@@ -25,7 +25,7 @@ Test the app before we build the image.
 docker run -it --rm -v $PWD:/app -w /app -p 8080:8080 iron/ruby ruby app.rb
 ```
 
-Check http://localhost:8080/ to ensure it's working.
+Check http://localhost:8080/ to ensure it's working (or the Docker IP if you're on mac, `docker-machine ip`).
 
 ### Build image:
 
